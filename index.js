@@ -16,15 +16,20 @@ const axios = require("axios").default
 //         console.error(err);
 //     })
 
-// axios({
-//     url:"https://jsonplaceholder.typicode.com/posts",
-//     params:{
-//         lang:"ru"
-//     },
-//     headers:{
-//         "Content-Type": "application/json"
-//     }
-// })
+axios({
+    url: "https://fortniteapi.io/v1/challenges",
+    params: {
+        lang: "ru"
+    },
+    headers: {
+        "Content-Type": "application/json"
+    }
+}).then(res => {
+    console.log(res.data)
+})
+    .catch((err) => {
+        console.error(err.toJSON());
+    })
 
 // axios.post("https://jsonplaceholder.typicode.com/posts", {
 //     userId: 1,
@@ -37,17 +42,17 @@ const axios = require("axios").default
 //         console.error(err);
 //     })
 
-axios({
-    method: "POST",
-    url: "https://jsonplaceholder.typicode.com/posts",
-    data: {
-        userId: 1,
-        title: "My title",
-        body: "My Body",
-    }
-}).then(res => {
-    console.log(res.data)
-})
-    .catch((err) => {
-        console.error(err);
-    })
+// axios({
+//     method: "POST",
+//     url: "https://jsonplaceholder.typicode.com/posts",
+//     data: {
+//         userId: 1,
+//         title: "My title",
+//         body: "My Body",
+//     }
+// }).then(res => {
+//     console.log(res.data)
+// })
+//     .catch((err) => {
+//         console.error(err);
+//     })
