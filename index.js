@@ -16,10 +16,35 @@ const axios = require("axios").default
 //         console.error(err);
 //     })
 
-axios.post("https://jsonplaceholder.typicode.com/posts", {
-    userId: 1,
-    title: "My title",
-    body: "My Body",
+// axios({
+//     url:"https://jsonplaceholder.typicode.com/posts",
+//     params:{
+//         lang:"ru"
+//     },
+//     headers:{
+//         "Content-Type": "application/json"
+//     }
+// })
+
+// axios.post("https://jsonplaceholder.typicode.com/posts", {
+//     userId: 1,
+//     title: "My title",
+//     body: "My Body",
+// }).then(res => {
+//     console.log(res.data)
+// })
+//     .catch((err) => {
+//         console.error(err);
+//     })
+
+axios({
+    method: "POST",
+    url: "https://jsonplaceholder.typicode.com/posts",
+    data: {
+        userId: 1,
+        title: "My title",
+        body: "My Body",
+    }
 }).then(res => {
     console.log(res.data)
 })
